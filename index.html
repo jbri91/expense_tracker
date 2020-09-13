@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Each expense should include:
+The date of expense
+A description of the expense
+The amount
+Where the purchases occured (eg. McDonald’s)
+User should be able to add a new expense
+User should be able to delete expense
+User should be able to see all of the expenses in an HTML table -->
+    <!-- Monday, September 14th 2020 (2 weeks) -->
+  </head>
+
+  <body>
+    <h1>The Expense Tracker</h1>
+    <h2>Enter An Expense</h2>
+    <form>
+      <h2>Date:</h2>
+      <input type="text" value="When did you buy it?" />
+      <h2>Type:</h2>
+      <input type="text" value="Currency Type" />
+      <h2>Name:</h2>
+      <input type="text" value="What was purchased?" />
+      <h2>Amount:</h2>
+      <input type="text" value="How much was it?" />
+    </form>
+    <br />
+    <br />
+    <table>
+      <thead>
+        <br />
+        <br />
+        <button type="button" id='submitExpense'>SUBMIT EXPENSE</button>
+        <br />
+        <br />
+        <tr>
+          <th>Date</th>
+          <th>Type</th>
+          <th>Name</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="date">9/12/2020</td>
+          <td id="type">Credit Card/Debit Card</td>
+          <td id="expense">Natural Frontier</td>
+          <td id="amount">$50.00</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+  <script src="main.js"></script>
+</html>

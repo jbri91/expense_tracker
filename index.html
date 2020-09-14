@@ -18,7 +18,7 @@ User should be able to see all of the expenses in an HTML table -->
   <body>
     <h1>The Expense Tracker</h1>
     <h2>Enter An Expense</h2>
-    <form>
+    <form id= table>
       <h2>Date:</h2>
       <input id=dateInput type="text" placeholder="When did you buy it?" />
       <h2>Type:</h2>
@@ -30,7 +30,7 @@ User should be able to see all of the expenses in an HTML table -->
     </form>
     <br />
     <br />
-    <table>
+    <table id= expenseTable>
       <thead>
         <br />
         <br />
@@ -46,10 +46,10 @@ User should be able to see all of the expenses in an HTML table -->
       </thead>
       <tbody>
         <tr>
-          <td id="date">9/12/2020</td>
-          <td id="type">Credit Card/Debit Card</td>
-          <td id="expense">Natural Frontier</td>
-          <td id="amount">$50.00</td>
+          <td id="td1">9/12/2020</td>
+          <td id="td2">Credit Card</td>
+          <td id="td3">Natural Frontier</td>
+          <td id="td4">$50.00</td>
         </tr>
       </tbody>
     </table>

@@ -1,40 +1,48 @@
-expense;
-date = new Date();
-type;
-name;
-amount;
+// expense;
+// // date = new Date();
+// type;
+// name;
+// amount;
 
 document.getElementById("submitExpense").addEventListener("click", function(e) {
-        dateInput(e);
+        inputDate(e);
         typeInput(e);
         nameInput(e);
         amountInput(e);
     })
 
-function dateInput(e) {
-    const dateInput = document.getElementById('dateInput');
-date = document.createElement('tr');
-date.innerText = dateInput;
-date.id = 'expenseDate';
-date.appendChild(dateInput);
-  
+function inputDate(e) {
+    let dateUserInput = document.getElementById('dateInput').value;
+    let tableRef = document.getElementById('expenseTable');
+    let newRow = tableRef.insertRow(-1);
+    let newCell = newRow.insertCell(0);
+    let newText = document.createTextNode(dateUserInput);
+    newCell.appendChild(newText);
 }
 
 function typeInput(e) {
-    const typeInput = document.getElementById('typeInput');
+    const typeUserInput = document.getElementById('typeInput').value;
+    document.getElementById('td2').innerHTML = typeUserInput;
+    // let tableRef = document.getElementById('expenseTable');
+    // let newRow = tableRef.insertRow(-1);
+    // let newCell = newRow.insertCell(0);
+    // let newText = document.createTextNode(typeUserInput);
+    // newCell.appendChild(newText);
 
   
 }
 
 function nameInput(e) {
-    const nameInput = document.getElementById('nameInput');
-
+    const nameUserInput = document.getElementById('nameInput').value;
+    document.getElementById('td3').innerHTML = nameUserInput;
+    console.log(nameUserInput);
   
 }
 
 function amountInput(e) {
-    const amountInput = document.getElementById('amountInput');
-
+    const amountUserInput = document.getElementById('amountInput').value;
+    document.getElementById('td4').innerHTML = amountUserInput;
+    console.log(amountUserInput);
   
 }
 

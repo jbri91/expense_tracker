@@ -20,13 +20,13 @@ User should be able to see all of the expenses in an HTML table -->
     <h2>Enter An Expense</h2>
     <form id= table>
       <h2>Date:</h2>
-      <input id=dateInput type="text" placeholder="When did you buy it?" />
+      <input class="input" id=dateInput type="text" placeholder="When did you buy it?" />
       <h2>Type:</h2>
-      <input id='typeInput' type="text" placeholder="Currency Type" />
+      <input class="input" id='typeInput' type="text" placeholder="Currency Type" />
       <h2>Name:</h2>
-      <input id='nameInput' type="text" placeholder="What was purchased?" />
+      <input class='input' id='nameInput' type="text" placeholder="What was purchased?" />
       <h2>Amount:</h2>
-      <input id='amountInput' type="text" placeholder="How much was it?" />
+      <input class="input" id='amountInput' type="text" placeholder="How much was it?" />
     </form>
     <br />
     <br />
@@ -42,14 +42,11 @@ User should be able to see all of the expenses in an HTML table -->
           <th>Type</th>
           <th>Name</th>
           <th>Amount</th>
+          <th>Delete</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id='tableBody'>
         <tr>
-          <td id="td1">9/12/2020</td>
-          <td id="td2">Credit Card</td>
-          <td id="td3">Natural Frontier</td>
-          <td id="td4">$50.00</td>
         </tr>
       </tbody>
     </table>

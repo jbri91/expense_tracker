@@ -1,51 +1,30 @@
-// expense;
-// // date = new Date();
-// type;
-// name;
-// amount;
-
-document.getElementById("submitExpense").addEventListener("click", function(e) {
-        inputDate(e);
-        typeInput(e);
-        nameInput(e);
-        amountInput(e);
+document.getElementById("submitExpense").addEventListener("click", function() {
+        makeTableRow();
     })
 
-function inputDate(e) {
+// document.getElementById('deleteButton').addEventListener("click", deleteExpense())
+
+function deleteExpense() {
+   
+}
+
+function makeTableRow() {
     let dateUserInput = document.getElementById('dateInput').value;
-    let tableRef = document.getElementById('expenseTable');
-    let newRow = tableRef.insertRow(-1);
-    let newCell = newRow.insertCell(0);
-    let newText = document.createTextNode(dateUserInput);
-    newCell.appendChild(newText);
-}
-
-function typeInput(e) {
     const typeUserInput = document.getElementById('typeInput').value;
-    document.getElementById('td2').innerHTML = typeUserInput;
-    // let tableRef = document.getElementById('expenseTable');
-    // let newRow = tableRef.insertRow(-1);
-    // let newCell = newRow.insertCell(0);
-    // let newText = document.createTextNode(typeUserInput);
-    // newCell.appendChild(newText);
-
-  
-}
-
-function nameInput(e) {
-    const nameUserInput = document.getElementById('nameInput').value;
-    document.getElementById('td3').innerHTML = nameUserInput;
-    console.log(nameUserInput);
-  
-}
-
-function amountInput(e) {
     const amountUserInput = document.getElementById('amountInput').value;
-    document.getElementById('td4').innerHTML = amountUserInput;
-    console.log(amountUserInput);
-  
-}
+    const nameUserInput = document.getElementById('nameInput').value;
+    let tableRef = document.getElementById('expenseTable');
 
-function deleteExpense(e) {
-  console.log("It deletes!");
-}
+    let newRow = `
+        <tr>
+            <td id='td1'>${dateUserInput}</td>
+            <td id='td2'>${typeUserInput}</td>
+            <td id='td3'>${nameUserInput}</td>
+            <td id='td4'>${amountUserInput}</td>
+            <td> <input onclick='deleteExpense()' id= 'deleteButton' type= 'button' value='Delete'/></td>
+        </tr>
+        `
+    tableRef.innerHTML += newRow
+    const inputs = document.querySelectorAll('.input');
+    inputs.forEach(inputs => inputs.value = "");
+    }

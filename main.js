@@ -4,8 +4,8 @@ document.getElementById("submitExpense").addEventListener("click", function() {
 
 // document.getElementById('deleteButton').addEventListener("click", deleteExpense())
 
-function deleteExpense() {
-   
+function deleteExpense(e) {
+  
 }
 
 function makeTableRow() {

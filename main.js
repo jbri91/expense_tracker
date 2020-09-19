@@ -2,11 +2,17 @@ document.getElementById("submitExpense").addEventListener("click", function () {
   makeTableRow();
 });
 
+let deleteRow = false;
 
-function deleteExpense(r) {
-let i = document.getElementsByTagName('tr');
-document.getElementById("expenseTable").deleteRow(i);
-console.log(i);
+function deleteExpense(event) {
+ deleteRow = true;
+let deleteBtn = document.getElementById('deleteButton');
+console.log(event.target);
+console.log(deleteBtn.parentNode.parentNode)
+// deleteBtn.parentNode.parentNode.remove();
+if (deleteRow == true) {
+  deleteBtn.parentNode.parentNode.remove();
+}
 }
 
 function makeTableRow() {
@@ -23,11 +29,16 @@ function makeTableRow() {
             <td id='td2'>${typeUserInput}</td>
             <td id='td3'>${nameUserInput}</td>
             <td id='td4'>${amountUserInput}</td>
-            <td> <input onclick='deleteExpense()' className = 'delete' id= 'deleteButton' type= 'button' value='Delete'/></td>
+            <td> 
+            <button class='delete' id='deleteButton'>Delete</button>
+            </td>
         </tr>
         `;
 
   tableRef.innerHTML += newRow;
   inputs.forEach((inputs) => (inputs.value = ""));
+  
+  const deleteBtn = document.getElementById('deleteButton');
+  deleteBtn.addEventListener('click', deleteExpense);
 }
 

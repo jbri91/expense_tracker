@@ -2,8 +2,11 @@ document.getElementById("submitExpense").addEventListener("click", function () {
   makeTableRow();
 });
 
-function deleteExpense(e) {
-  document.getElementsByTagName("tr")[1].remove();
+
+function deleteExpense(r) {
+let i = document.getElementsByTagName('tr');
+document.getElementById("expenseTable").deleteRow(i);
+console.log(i);
 }
 
 function makeTableRow() {

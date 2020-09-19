@@ -12,6 +12,7 @@ console.log(deleteBtn.parentNode.parentNode)
 // deleteBtn.parentNode.parentNode.remove();
 if (deleteRow == true) {
   deleteBtn.parentNode.parentNode.remove();
+  deleteRow = false;
 }
 }
 

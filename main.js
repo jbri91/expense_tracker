@@ -2,18 +2,13 @@ document.getElementById("submitExpense").addEventListener("click", function () {
   makeTableRow();
 });
 
-let deleteRow = false;
 
 function deleteExpense(event) {
- deleteRow = true;
-let deleteBtn = document.getElementById('deleteButton');
-console.log(event.target);
-console.log(deleteBtn.parentNode.parentNode)
-// deleteBtn.parentNode.parentNode.remove();
-if (deleteRow == true) {
-  deleteBtn.parentNode.parentNode.remove();
-  deleteRow = false;
-}
+  let deleteBtn = document.getElementById('deleteButton');
+  let i = deleteBtn.parentNode.parentNode.rowIndex;
+  if (event.target.id == 'deleteButton'){
+    document.getElementById('expenseTable').deleteRow(i);
+    }
 }
 
 function makeTableRow() {
@@ -39,7 +34,7 @@ function makeTableRow() {
   tableRef.innerHTML += newRow;
   inputs.forEach((inputs) => (inputs.value = ""));
   
-  const deleteBtn = document.getElementById('deleteButton');
-  deleteBtn.addEventListener('click', deleteExpense);
+  // const deleteBtn = document.getElementById('deleteButton');
+  tableRef.addEventListener('click', deleteExpense);
 }
 

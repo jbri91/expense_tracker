@@ -3,51 +3,62 @@
   <head>
     <title>The Expense Tracker</title>
     <link rel="stylesheet" href="style.css" />
-
-    <!-- Each expense should include:
-The date of expense
-A description of the expense
-The amount
-Where the purchases occured (eg. McDonald’s)
-User should be able to add a new expense
-User should be able to delete expense
-User should be able to see all of the expenses in an HTML table -->
-    <!-- Monday, September 14th 2020 (2 weeks) -->
   </head>
 
   <body>
     <h1>The Expense Tracker</h1>
     <h2>Enter An Expense</h2>
-    <form id= table>
+    <form id="table">
       <h2>Date:</h2>
-      <input class="input" id=dateInput type="text" placeholder="When did you buy it?" />
-      <h2>Type:</h2>
-      <input class="input" id='typeInput' type="text" placeholder="Currency Type" />
+      <input
+        class="input"
+        id="dateInput"
+        type="date"
+        placeholder="When did you buy it?"
+      />
       <h2>Name:</h2>
-      <input class='input' id='nameInput' type="text" placeholder="What was purchased?" />
+      <input
+        class="input"
+        id="nameInput"
+        type="text"
+        placeholder="What was purchased?"
+      />
+      <h2>Type:</h2>
+      <label for="currencyType"></label>
+      <select name="currencyType" id="typeInput">
+        <option value="Credit Card">Credit Card</option>
+        <option value="Gift Card">Gift Card</option>
+        <option value="Cash">Cash</option>
+        <option value="Cryptocoin">Cryptocoin</option>
+        <option value="Other">Other</option>
+      </select>
       <h2>Amount:</h2>
-      <input class="input" id='amountInput' type="text" placeholder="How much was it?" />
+      <input
+        class="input"
+        id="amountInput"
+        type="text"
+        placeholder="How much was it?"
+      />
     </form>
     <br />
     <br />
-    <table id= 'expenseTable'>
+    <table id="expenseTable">
       <thead>
         <br />
         <br />
-        <button type="button" id='submitExpense'>SUBMIT EXPENSE</button>
+        <button type="button" id="submitExpense">SUBMIT EXPENSE</button>
         <br />
         <br />
         <tr>
           <th>Date</th>
-          <th>Type</th>
           <th>Name</th>
+          <th>Type</th>
           <th>Amount</th>
           <th>Delete</th>
         </tr>
       </thead>
-      <tbody id='tableBody'>
-        <tr id = 'categories'>
-        </tr>
+      <tbody id="tableBody">
+        <tr id="categories"></tr>
       </tbody>
     </table>
   </body>

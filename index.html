@@ -12,20 +12,20 @@
       <h2>Date:</h2>
       <input
         class="input"
-        id="dateInput"
+        id="date"
         type="date"
         placeholder="When did you buy it?"
       />
       <h2>Name:</h2>
       <input
         class="input"
-        id="nameInput"
+        id="name"
         type="text"
         placeholder="What was purchased?"
       />
       <h2>Type:</h2>
       <label for="currencyType"></label>
-      <select name="currencyType" id="typeInput" class='input'>
+      <select name="currencyType" id="type" class="input">
         <option value="Credit Card">Credit Card</option>
         <option value="Gift Card">Gift Card</option>
         <option value="Cash">Cash</option>
@@ -35,20 +35,14 @@
       <h2>Amount:</h2>
       <input
         class="input"
-        id="amountInput"
-        type="text"
+        id="amount"
+        type="number"
         placeholder="How much was it?"
       />
     </form>
-    <br />
-    <br />
-    <table id="expenseTable">
+    <table id="expense-table">
       <thead>
-        <br />
-        <br />
-        <button type="button" id="submitExpense">SUBMIT EXPENSE</button>
-        <br />
-        <br />
+        <button type="button" id="submit-expense">SUBMIT EXPENSE</button>
         <tr>
           <th>Date</th>
           <th>Name</th>
@@ -57,7 +51,7 @@
           <th>Delete</th>
         </tr>
       </thead>
-      <tbody id="tableBody">
+      <tbody id="table-body">
         <tr id="categories"></tr>
       </tbody>
     </table>

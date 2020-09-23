@@ -1,7 +1,5 @@
 form {
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 h1 {
@@ -11,6 +9,12 @@ body {
   text-align: center;
   background-color: gray;
 }
+
+button {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
 td,
 th {
   border: 1px solid #999;

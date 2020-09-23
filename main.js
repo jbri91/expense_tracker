@@ -1,6 +1,8 @@
-document.getElementById("submitExpense").addEventListener("click", function () {
-  makeTableRow();
-});
+document
+  .getElementById("submit-expense")
+  .addEventListener("click", function () {
+    makeTableRow();
+  });
 
 function deleteExpense(e) {
   if (e.target.id === "deleteButton") {
@@ -9,26 +11,19 @@ function deleteExpense(e) {
 }
 
 function makeTableRow() {
-  let dateUserInput = document.getElementById("dateInput").value;
-  const typeUserInput = document.getElementById("typeInput").value;
-  let amountUserInput = document.getElementById("amountInput").value;
-  const nameUserInput = document.getElementById("nameInput").value;
-  let tableRef = document.getElementById("expenseTable");
-  const inputs = document.querySelectorAll(".input");
+  let tableRef = document.getElementById("expense-table");
 
-  let checkFor$ = amountUserInput.indexOf("$");
-  if (checkFor$ !== -1) {
-    amountUserInput = amountUserInput;
-  } else {
-    amountUserInput = "$" + amountUserInput;
-  }
+  let date = document.getElementById("date").value;
+  const name = document.getElementById("name").value;
+  const type = document.getElementById("type").value;
+  let amount = document.getElementById("amount").value;
 
   let newRow = `
         <tr>
-            <td id='td1'>${dateUserInput}</td>
-            <td id='td3'>${nameUserInput}</td>
-            <td id='td2'>${typeUserInput}</td>
-            <td id='td4'>${amountUserInput}</td>
+            <td id='td1'>${date}</td>
+            <td id='td3'>${name}</td>
+            <td id='td2'>${type}</td>
+            <td id='td4'>$${amount}</td>
             <td> 
             <button class='delete' id='deleteButton'>Delete</button>
             </td>
@@ -36,16 +31,17 @@ function makeTableRow() {
         `;
 
   if (
-    dateUserInput.length > 2 &&
-    typeUserInput.length > 2 &&
-    nameUserInput.length > 2 &&
-    amountUserInput.length >= 2
+    date.length > 2 &&
+    type.length > 2 &&
+    name.length > 2 &&
+    amount.length >= 2
   ) {
     tableRef.innerHTML += newRow;
-    inputs.forEach((inputs) => (inputs.value = ""));
   } else {
     window.alert("Please Enter An Expense");
   }
-
+  const inputs = document.querySelectorAll(".input");
+  inputs.forEach((inputs) => (inputs.value = ""));
+  
   tableRef.addEventListener("click", deleteExpense);
 }

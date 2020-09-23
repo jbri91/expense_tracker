@@ -48,5 +48,4 @@ function makeTableRow() {
   }
 
   tableRef.addEventListener("click", deleteExpense);
-
 }

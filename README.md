@@ -1,6 +1,7 @@
 # Expense Tracker
 
 Expense Tracker created with HTML, CSS and JavaScript
+
 Click [here](https://jbri91.github.io/expense_tracker/) to track your expenses.
 
 ![ExpenseTracker](image/expense_tracker.png)

@@ -1,8 +1,5 @@
-document
-  .getElementById("submit-expense")
-  .addEventListener("click", function () {
-    makeTableRow();
-  });
+const submitBtn = document.getElementById('submit-expense');
+submitBtn.addEventListener("click", () => createExpense());
 
 function deleteExpense(e) {
   if (e.target.id === "deleteButton") {
@@ -10,7 +7,7 @@ function deleteExpense(e) {
   }
 }
 
-function makeTableRow() {
+function createExpense() {
   let tableRef = document.getElementById("expense-table");
 
   let date = document.getElementById("date").value;
@@ -34,14 +31,14 @@ function makeTableRow() {
     date.length > 2 &&
     type.length > 2 &&
     name.length > 2 &&
-    amount.length >= 2
+    amount.length > 2
   ) {
     tableRef.innerHTML += newRow;
   } else {
-    window.alert("Please Enter An Expense");
+    alert("Please Enter An Expense");
   }
   const inputs = document.querySelectorAll(".input");
   inputs.forEach((inputs) => (inputs.value = ""));
-  
+
   tableRef.addEventListener("click", deleteExpense);
 }
